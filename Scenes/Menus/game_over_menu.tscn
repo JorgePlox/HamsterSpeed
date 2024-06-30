@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3 uid="uid://k1ks1g354syx"]
+
+[ext_resource type="Texture2D" uid="uid://mb7chilnjpdm" path="res://Assets/Sprites/MainScreen/MainScreenBG.png" id="1_6y31q"]
+[ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="1_eurea"]
+[ext_resource type="FontFile" uid="uid://cb3mj2o3k3yca" path="res://Assets/Fonts/Kenney Pixel Square.ttf" id="2_po22v"]
+[ext_resource type="PackedScene" uid="uid://b7ubpb4doy6bu" path="res://Scenes/Menus/main_menu.tscn" id="2_svg04"]
+[ext_resource type="StyleBox" uid="uid://biw5ndpjgcrn3" path="res://Assets/Sprites/MainScreen/button.tres" id="3_8l2t4"]
+[ext_resource type="PackedScene" uid="uid://cvr6sy1s2hku2" path="res://Scenes/UI/number_sprite.tscn" id="6_8cxrf"]
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eurea")
+main_menu_scene = ExtResource("2_svg04")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("1_6y31q")
+
+[node name="ContinueSelector" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 144.0
+
+[node name="Score" type="Sprite2D" parent="ContinueSelector"]
+position = Vector2(80, 46)
+scale = Vector2(4, 4)
+
+[node name="NumberSprite" parent="ContinueSelector/Score" instance=ExtResource("6_8cxrf")]
+position = Vector2(-10, -1)
+
+[node name="NumberSprite2" parent="ContinueSelector/Score" instance=ExtResource("6_8cxrf")]
+position = Vector2(-5, -1)
+
+[node name="NumberSprite3" parent="ContinueSelector/Score" instance=ExtResource("6_8cxrf")]
+position = Vector2(0, -1)
+
+[node name="NumberSprite4" parent="ContinueSelector/Score" instance=ExtResource("6_8cxrf")]
+position = Vector2(5, -1)
+
+[node name="NumberSprite5" parent="ContinueSelector/Score" instance=ExtResource("6_8cxrf")]
+position = Vector2(10, -1)
+
+[node name="HighScore" type="Sprite2D" parent="ContinueSelector"]
+position = Vector2(80, 80)
+scale = Vector2(2, 2)
+
+[node name="NumberSprite" parent="ContinueSelector/HighScore" instance=ExtResource("6_8cxrf")]
+position = Vector2(-10, -1)
+
+[node name="NumberSprite2" parent="ContinueSelector/HighScore" instance=ExtResource("6_8cxrf")]
+position = Vector2(-5, -1)
+
+[node name="NumberSprite3" parent="ContinueSelector/HighScore" instance=ExtResource("6_8cxrf")]
+position = Vector2(0, -1)
+
+[node name="NumberSprite4" parent="ContinueSelector/HighScore" instance=ExtResource("6_8cxrf")]
+position = Vector2(5, -1)
+
+[node name="NumberSprite5" parent="ContinueSelector/HighScore" instance=ExtResource("6_8cxrf")]
+position = Vector2(10, -1)
+
+[node name="ScoreLabel" type="Label" parent="ContinueSelector"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -67.0
+offset_right = 32.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("2_po22v")
+theme_override_font_sizes/font_size = 0
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="ContinueSelector"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -18.0
+offset_right = 24.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("2_po22v")
+theme_override_font_sizes/font_size = 8
+text = "High:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="ContinueSelector"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -49.0
+offset_right = 73.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_hover_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_focus_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_disabled_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_fonts/font = ExtResource("2_po22v")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_8l2t4")
+theme_override_styles/hover = ExtResource("3_8l2t4")
+theme_override_styles/pressed = ExtResource("3_8l2t4")
+theme_override_styles/disabled = ExtResource("3_8l2t4")
+theme_override_styles/focus = ExtResource("3_8l2t4")
+text = "Exit"
+
+[node name="RetryButton" type="Button" parent="ContinueSelector"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -49.0
+offset_right = -15.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_hover_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_focus_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_disabled_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_fonts/font = ExtResource("2_po22v")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_8l2t4")
+theme_override_styles/hover = ExtResource("3_8l2t4")
+theme_override_styles/pressed = ExtResource("3_8l2t4")
+theme_override_styles/disabled = ExtResource("3_8l2t4")
+theme_override_styles/focus = ExtResource("3_8l2t4")
+text = "Retry"
+
+[node name="ContinueButton" type="Button" parent="ContinueSelector"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = 23.0
+offset_right = 29.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_hover_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_focus_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.607843, 0.737255, 0.0588235, 1)
+theme_override_colors/font_disabled_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_fonts/font = ExtResource("2_po22v")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_8l2t4")
+theme_override_styles/hover = ExtResource("3_8l2t4")
+theme_override_styles/pressed = ExtResource("3_8l2t4")
+theme_override_styles/disabled = ExtResource("3_8l2t4")
+theme_override_styles/focus = ExtResource("3_8l2t4")
+text = "Continue"
+
+[connection signal="pressed" from="ContinueSelector/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ContinueSelector/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="ContinueSelector/ContinueButton" to="." method="_on_continue_button_pressed"]

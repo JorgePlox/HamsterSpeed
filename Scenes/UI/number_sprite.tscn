@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvr6sy1s2hku2"]
+
+[ext_resource type="Texture2D" uid="uid://c2hekbuepnhrk" path="res://Assets/Sprites/Numbers.png" id="1_0d60l"]
+[ext_resource type="Script" path="res://Scripts/number_sprite.gd" id="2_lwn3r"]
+
+[node name="NumberSprite" type="Sprite2D"]
+texture = ExtResource("1_0d60l")
+hframes = 6
+vframes = 2
+frame = 8
+script = ExtResource("2_lwn3r")

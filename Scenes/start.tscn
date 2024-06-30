@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dniblufi0rmbu"]
+
+[ext_resource type="Script" path="res://Scripts/start.gd" id="1_dsj7r"]
+[ext_resource type="Texture2D" uid="uid://cgo3dc2ryafma" path="res://Assets/Sprites/Start.png" id="2_8cf56"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_dsj7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8cf56")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]

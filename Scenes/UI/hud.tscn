@@ -1,0 +1,162 @@
+[gd_scene load_steps=18 format=3 uid="uid://ckf8gvhd6uo62"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_o47ki"]
+[ext_resource type="Texture2D" uid="uid://brw7r17gs0cua" path="res://Assets/Sprites/TimerV1.png" id="2_86epj"]
+[ext_resource type="PackedScene" uid="uid://cvr6sy1s2hku2" path="res://Scenes/UI/number_sprite.tscn" id="2_urrhl"]
+[ext_resource type="Texture2D" uid="uid://buf7rxoyadsia" path="res://Assets/Sprites/HamsterFall.png" id="4_cp43j"]
+[ext_resource type="Texture2D" uid="uid://0h5wbenjqbk4" path="res://Assets/Sprites/Hamster.png" id="5_enmj2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bddiu"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ftvs"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs7wq"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npe3j"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0hv2"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dwrr"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31681"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38v71"]
+atlas = ExtResource("4_cp43j")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny0fw"]
+atlas = ExtResource("5_enmj2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hdb7"]
+atlas = ExtResource("5_enmj2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33s75"]
+atlas = ExtResource("5_enmj2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcqsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bddiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ftvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs7wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npe3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0hv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dwrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31681")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38v71")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny0fw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hdb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33s75")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o47ki")
+
+[node name="TimerV1" type="Sprite2D" parent="."]
+position = Vector2(80, 14.5)
+texture = ExtResource("2_86epj")
+
+[node name="NumberSprite" parent="TimerV1" instance=ExtResource("2_urrhl")]
+position = Vector2(-7.5, -1)
+
+[node name="NumberSprite2" parent="TimerV1" instance=ExtResource("2_urrhl")]
+position = Vector2(-2.5, -1)
+
+[node name="NumberSprite3" parent="TimerV1" instance=ExtResource("2_urrhl")]
+position = Vector2(2.5, -1)
+frame = 10
+
+[node name="NumberSprite4" parent="TimerV1" instance=ExtResource("2_urrhl")]
+position = Vector2(7.5, -1)
+
+[node name="Score" type="Sprite2D" parent="."]
+position = Vector2(140.5, 10.5)
+
+[node name="NumberSprite" parent="Score" instance=ExtResource("2_urrhl")]
+position = Vector2(-10, -1)
+
+[node name="NumberSprite2" parent="Score" instance=ExtResource("2_urrhl")]
+position = Vector2(-5, -1)
+
+[node name="NumberSprite3" parent="Score" instance=ExtResource("2_urrhl")]
+position = Vector2(0, -1)
+
+[node name="NumberSprite4" parent="Score" instance=ExtResource("2_urrhl")]
+position = Vector2(5, -1)
+
+[node name="NumberSprite5" parent="Score" instance=ExtResource("2_urrhl")]
+position = Vector2(10, -1)
+
+[node name="Lives" type="Sprite2D" parent="."]
+position = Vector2(28, 10.5)
+
+[node name="NumberSprite" parent="Lives" instance=ExtResource("2_urrhl")]
+position = Vector2(0.5, 0)
+
+[node name="LivesSprite" type="AnimatedSprite2D" parent="Lives"]
+position = Vector2(-9, -2.5)
+sprite_frames = SubResource("SpriteFrames_mcqsc")
+animation = &"Fall"
+frame = 1
+flip_h = true

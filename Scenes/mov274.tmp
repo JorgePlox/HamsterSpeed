@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://do2mcb8tgbt2b"]
+
+[ext_resource type="Script" path="res://Scripts/moving_wall.gd" id="1_isshy"]
+[ext_resource type="Texture2D" uid="uid://c3kuvnfq3hq4e" path="res://Assets/Sprites/Wall.png" id="1_mgx14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfgm6"]
+size = Vector2(32, 48)
+
+[node name="MovingWall" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_isshy")
+movement_distance = null
+movement_speed = null
+horizontal = null
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_mgx14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_tfgm6")

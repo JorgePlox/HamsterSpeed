@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxtn1u5y42old"
+path="res://.godot/imported/jamster cute tonto piano chip tune.mp3-d459054ca1827c29a9bda71e5e29cb08.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/OST/jamster cute tonto piano chip tune.mp3"
+dest_files=["res://.godot/imported/jamster cute tonto piano chip tune.mp3-d459054ca1827c29a9bda71e5e29cb08.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

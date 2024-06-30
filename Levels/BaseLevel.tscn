@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://tvjsqu80w2o5"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_y15e8"]
+[ext_resource type="PackedScene" uid="uid://d1tgo32v00pv1" path="res://Scenes/player.tscn" id="2_xysy7"]
+[ext_resource type="PackedScene" uid="uid://bi1wrs6f7ts0f" path="res://Scenes/UI/ui_layer.tscn" id="3_3oedh"]
+[ext_resource type="PackedScene" uid="uid://dcdheruq4x7i5" path="res://Scenes/UI/background.tscn" id="4_3v7hc"]
+[ext_resource type="PackedScene" uid="uid://cqfrxmp5qulsy" path="res://Scenes/TileMap.tscn" id="5_rusnc"]
+[ext_resource type="PackedScene" uid="uid://dniblufi0rmbu" path="res://Scenes/start.tscn" id="6_ni3gk"]
+[ext_resource type="PackedScene" uid="uid://i2f70antumq4" path="res://Scenes/exit.tscn" id="7_1dogj"]
+[ext_resource type="PackedScene" uid="uid://c1pds0epx6cd1" path="res://Scenes/seed_coin.tscn" id="8_5bvdg"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_y15e8")
+level_time = 15
+
+[node name="Player" parent="." instance=ExtResource("2_xysy7")]
+
+[node name="UILayer" parent="." instance=ExtResource("3_3oedh")]
+
+[node name="Background" parent="." instance=ExtResource("4_3v7hc")]
+scroll_offset = Vector2(430.953, 206.39)
+
+[node name="TileMap" parent="." instance=ExtResource("5_rusnc")]
+layer_0/tile_data = PackedInt32Array(65537, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 131075, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 65540, 65536, 0, 196612, 65536, 0, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 131076, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 131078, 65536, 0, 196614, 65536, 0, 196613, 65536, 0, 131077, 65536, 0, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 196615, 131072, 0, 131079, 131072, 0, 65543, 131072, 0)
+
+[node name="Start" parent="." instance=ExtResource("6_ni3gk")]
+position = Vector2(40, 40)
+
+[node name="Exit" parent="." instance=ExtResource("7_1dogj")]
+position = Vector2(88, 56)
+
+[node name="Seeds" type="Node" parent="."]
+
+[node name="Seed" parent="Seeds" instance=ExtResource("8_5bvdg")]
+z_index = 5
+position = Vector2(89, 25)

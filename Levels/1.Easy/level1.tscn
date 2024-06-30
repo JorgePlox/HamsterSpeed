@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6b1eug8sb6am"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_1tch2"]
+[ext_resource type="PackedScene" uid="uid://tcuhkmv0dol5" path="res://Levels/1.Easy/level2.tscn" id="2_ugrak"]
+[ext_resource type="PackedScene" uid="uid://d1tgo32v00pv1" path="res://Scenes/player.tscn" id="3_6u658"]
+[ext_resource type="PackedScene" uid="uid://bi1wrs6f7ts0f" path="res://Scenes/UI/ui_layer.tscn" id="4_1s6t3"]
+[ext_resource type="PackedScene" uid="uid://dcdheruq4x7i5" path="res://Scenes/UI/background.tscn" id="5_6y0bv"]
+[ext_resource type="PackedScene" uid="uid://cqfrxmp5qulsy" path="res://Scenes/TileMap.tscn" id="6_bilyv"]
+[ext_resource type="PackedScene" uid="uid://dniblufi0rmbu" path="res://Scenes/start.tscn" id="7_1otkb"]
+[ext_resource type="PackedScene" uid="uid://i2f70antumq4" path="res://Scenes/exit.tscn" id="8_1wry5"]
+[ext_resource type="PackedScene" uid="uid://c1pds0epx6cd1" path="res://Scenes/seed_coin.tscn" id="9_2s3pa"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1tch2")
+next_level = ExtResource("2_ugrak")
+level_time = 20
+
+[node name="Player" parent="." instance=ExtResource("3_6u658")]
+
+[node name="UILayer" parent="." instance=ExtResource("4_1s6t3")]
+
+[node name="Background" parent="." instance=ExtResource("5_6y0bv")]
+scroll_offset = Vector2(378.166, 376.149)
+
+[node name="TileMap" parent="." instance=ExtResource("6_bilyv")]
+layer_0/tile_data = PackedInt32Array(131073, 65536, 0, 131074, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 131082, 65536, 0, 131081, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 131078, 65536, 0, 131077, 65536, 0, 131076, 65536, 0, 131075, 65536, 0, 196610, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 262151, 65536, 1, 262152, 65536, 1, 262153, 65536, 1, 262154, 65536, 1, 196619, 65536, 0, 131083, 65536, 0, 65547, 65536, 0, 65537, 65536, 0, 196609, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 131087, 65536, 0, 196623, 65536, 0, 196622, 65536, 0, 196621, 65536, 0, 196620, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 131086, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 196625, 65536, 0, 196624, 65536, 0, 131088, 65536, 0, 131089, 65536, 0, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 262155, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 262158, 65536, 1, 262159, 65536, 1, 262160, 65536, 1, 262161, 65536, 1, 196626, 131072, 0, 131090, 131072, 0, 65554, 131072, 0)
+
+[node name="Start" parent="." instance=ExtResource("7_1otkb")]
+position = Vector2(40, 40)
+
+[node name="Exit" parent="." instance=ExtResource("8_1wry5")]
+position = Vector2(264, 40)
+
+[node name="Seeds" type="Node" parent="."]
+
+[node name="Seed" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(73, 40)
+
+[node name="Seed2" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(105, 40)
+
+[node name="Seed3" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(136, 40)
+
+[node name="Seed4" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(168, 40)
+
+[node name="Seed5" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(201, 40)
+
+[node name="Seed6" parent="Seeds" instance=ExtResource("9_2s3pa")]
+z_index = 5
+position = Vector2(233, 40)

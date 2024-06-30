@@ -1,0 +1,14 @@
+CollisionShape2D
+RigidBody2D
+Label
+TextEdit
+Control
+TextureButton
+Sprite2D
+Node2D
+AnimationPlayer
+AnimatedSprite2D
+Node
+CharacterBody2D
+Area2D
+StaticBody2D
